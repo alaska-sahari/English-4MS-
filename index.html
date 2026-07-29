@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <meta
+        name="theme-color"
+        content="#ffffff"
+    >
+
+    <meta
+        name="description"
+        content="English 4MS تطبيق تعلم اللغة الإنجليزية لتلاميذ السنة الرابعة متوسط."
+    >
+
+    <title>
+        English 4MS| السنة الرابعة متوسط
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div id="app">
+
+
+<!-- =====================================================
+     HEADER
+====================================================== -->
+
+<header class="app-header">
+
+    <div class="header-left">
+
+        <button
+            id="menuBtn"
+            class="icon-btn"
+            type="button"
+            aria-label="فتح القائمة"
+            aria-controls="sideMenu"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+
+
+        <div class="app-brand">
+
+            <div
+                class="app-logo"
+                aria-hidden="true"
+            >
+                4MS
+            </div>
+
+
+            <div class="brand-text">
+
+                <h1>
+                    English
+                </h1>
+
+                <span>
+                    السنة الرابعة متوسط
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="header-actions">
+
+        <button
+            id="searchBtn"
+            class="icon-btn"
+            type="button"
+            aria-label="البحث عن الدروس"
+            aria-controls="searchPanel"
+            aria-expanded="false"
+        >
+            ⌕
+        </button>
+
+
+        <button
+            id="favoritesBtn"
+            class="icon-btn"
+            type="button"
+            aria-label="عرض الدروس المفضلة"
+            aria-pressed="false"
+        >
+            ☆
+        </button>
+
+
+        <button
+            id="levels"
+            class="icon-btn"
+            type="button"
+            aria-label="عرض الفصول"
+            aria-pressed="false"
+        ><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M2 4.5C5.5 3 8.5 3.5 12 5v15c-3.5-1.5-6.5-2-10-0.5v-15z" />
+          <path d="M22 4.5C18.5 3 15.5 3.5 12 5v15c3.5-1.5 6.5-2 10-.5v-15z" />
+        </svg>
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     SEARCH
+====================================================== -->
+
+<section
+    id="searchPanel"
+    class="search-panel hidden"
+    aria-label="البحث عن الدروس"
+>
+
+    <div class="search-box">
+
+        <span
+            class="search-icon"
+            aria-hidden="true"
+        >
+            🔍
+        </span>
+
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="ابحث عن درس..."
+            autocomplete="off"
+            aria-label="البحث عن الدروس"
+        >
+
+
+        <button
+            id="clearSearchBtn"
+            class="clear-search-btn"
+            type="button"
+            aria-label="مسح البحث"
+        >
+            ×
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MAIN
+====================================================== -->
+
+<main class="main-content">
+
+
+<!-- =====================================================
+     CHAPTER SELECTOR
+====================================================== -->
+
+<section class="level-section">
+
+
+    <div class="section-header">
+
+        <div>
+
+            <h2>
+                اختر الفصل
+            </h2>
+
+            <p>
+                اختر فصلًا لبدء التعلم
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div
+        id="levelSelector"
+        class="level-selector"
+        role="tablist"
+        aria-label="فصول السنة الرابعة متوسط"
+    >
+
+
+        <!-- الفصل الأول -->
+
+        <button
+            class="level-btn active"
+            type="button"
+            data-level="chapter1"
+            role="tab"
+            aria-selected="true"
+        >
+
+            <strong>
+                الفصل الأول
+            </strong>
+
+            <span>
+                Chapter 1
+            </span>
+
+        </button>
+
+
+
+        <!-- الفصل الثاني -->
+
+        <button
+            class="level-btn"
+            type="button"
+            data-level="chapter2"
+            role="tab"
+            aria-selected="false"
+        >
+
+            <strong>
+                الفصل الثاني
+            </strong>
+
+            <span>
+                Chapter 2
+            </span>
+
+        </button>
+
+
+
+        <!-- الفصل الثالث -->
+
+        <button
+            class="level-btn"
+            type="button"
+            data-level="chapter3"
+            role="tab"
+            aria-selected="false"
+        >
+
+            <strong>
+                الفصل الثالث
+            </strong>
+
+            <span>
+                Chapter 3
+            </span>
+
+        </button>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LESSONS
+====================================================== -->
+
+<section
+    class="lessons-section"
+    aria-label="الدروس"
+>
+
+
+    <div class="section-header">
+
+
+        <div>
+
+            <h2 id="lessonsTitle">
+                دروس الفصل الأول
+            </h2>
+
+
+            <p id="lessonsSubtitle">
+                ابدأ بتعلم دروس الفصل الأول
+            </p>
+
+        </div>
+
+
+        <span
+            id="lessonCount"
+            class="lesson-count"
+        >
+            0 درس
+        </span>
+
+
+    </div>
+
+
+
+    <div
+        id="lessonsList"
+        class="lessons-list"
+    >
+        <!-- يتم إدراج الدروس بواسطة JavaScript -->
+    </div>
+
+
+
+    <div
+        id="emptyState"
+        class="empty-state hidden"
+        role="status"
+    >
+
+        <div
+            class="empty-icon"
+            aria-hidden="true"
+        >
+            🔎
+        </div>
+
+
+        <h3>
+            لم يتم العثور على أي درس
+        </h3>
+
+
+        <p>
+            جرّب البحث مرة أخرى أو اختر فصلًا آخر.
+        </p>
+
+    </div>
+
+
+</section>
+
+</main>
+
+
+
+<!-- =====================================================
+     READER MODAL
+====================================================== -->
+
+<div
+    id="readerModal"
+    class="modal hidden"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="readerTitle"
+>
+
+
+    <div
+        class="modal-overlay"
+        aria-hidden="true"
+    ></div>
+
+
+    <article class="reader-container">
+
+
+        <!-- Reader Header -->
+
+        <header class="reader-header">
+
+
+            <button
+                id="closeReaderBtn"
+                class="icon-btn"
+                type="button"
+                aria-label="إغلاق الدرس"
+            >
+                ←
+            </button>
+
+
+            <div class="reader-header-info">
+
+
+                <span
+                    id="readerLevel"
+                    class="reader-level"
+                >
+                    الفصل الأول
+                </span>
+
+
+                <span
+                    id="readerLessonNumber"
+                    class="reader-number"
+                >
+                    الدرس 1
+                </span>
+
+
+            </div>
+
+
+            <button
+                id="readerFavoriteBtn"
+                class="icon-btn favorite-btn"
+                type="button"
+                aria-label="إضافة الدرس إلى المفضلة"
+                aria-pressed="false"
+            >
+                ☆
+            </button>
+
+
+        </header>
+
+
+
+        <!-- Reader Content -->
+
+        <div class="reader-content">
+
+
+            <div class="reader-title-section">
+
+                <h2 id="readerTitle">
+                    عنوان الدرس
+                </h2>
+
+
+                <p id="readerTitleAr">
+                    عنوان الدرس بالعربية
+                </p>
+
+            </div>
+
+
+
+            <!-- AUDIO -->
+
+<!-- AUDIO -->
+<div
+    class="audio-section"
+    aria-label="أدوات الصوت"
+><button
+    id="speakBtn"
+    class="speak-btn"
+    type="button"
+>
+    <span
+        class="speak-icon"
+        aria-hidden="true"
+    >
+        🔊
+    </span>
+
+    <span>
+        القراءة
+    </span>
+</button>
+
+
+<button
+    id="stopSpeakBtn"
+    class="stop-speak-btn"
+    type="button"
+>
+    إيقاف
+</button>
+
+</div><!-- سرعة القراءة -->
+<div
+    id="speechRateControl"
+    class="speech-controls" 
+><label for="speechRate">
+    سرعة القراءة
+</label>
+
+<select id="speechRate">
+
+    <option value="0.5">
+        0.5x بطيئة جدًا
+    </option>
+
+    <option value="0.75">
+        0.75x بطيئة
+    </option>
+
+    <option value="1" selected>
+        1x عادية
+    </option>
+
+    <option value="1.25">
+        1.25x سريعة
+    </option>
+
+    <option value="1.5">
+        1.5x سريعة جدًا
+    </option>
+
+    <option value="2">
+        2x سريعة جدًا
+    </option>
+
+</select>
+
+</div>
+
+
+            <!-- ENGLISH -->
+
+            <section
+                class="text-card english-card"
+                aria-label="النص الإنجليزي"
+            >
+
+                <div class="card-label">
+                    🇬🇧 English
+                </div>
+
+
+                <div
+                    id="readerText"
+                    class="reader-text"
+                    dir="ltr"
+                >
+                </div>
+
+            </section>
+
+
+
+            <!-- ARABIC -->
+
+            <section
+                class="text-card arabic-card"
+                aria-label="الترجمة العربية"
+            >
+
+                <div class="card-label">
+                    🇩🇿 العربية
+                </div>
+
+
+                <div
+                    id="readerTranslation"
+                    class="reader-translation"
+                    dir="rtl"
+                >
+                </div>
+
+            </section>
+
+
+
+            <!-- QUESTIONS -->
+
+            <section
+                id="questionsSection"
+                class="questions-section"
+            >
+
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h3>
+                            📝 أسئلة الفهم
+                        </h3>
+
+                        <p>
+                            اختبر مدى فهمك للنص
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="questionsContainer"
+                    class="questions-container"
+                >
+                </div>
+
+                
+
+
+                <div
+                    id="answersContainer"
+                    class="answers-container hidden"
+                >
+                </div>
+
+
+            </section>
+
+
+        </div>
+
+
+
+        <!-- FOOTER -->
+
+        <footer class="reader-footer">
+
+
+            <button
+                id="prevLessonBtn"
+                class="navigation-btn"
+                type="button"
+                aria-label="الدرس السابق"
+            >
+
+                <span>
+                    →
+                </span>
+
+                <span>
+                    السابق
+                </span>
+
+            </button>
+
+
+            <div
+                class="reader-position"
+                aria-live="polite"
+            >
+
+                <span id="currentPosition">
+                    1 / 1
+                </span>
+
+            </div>
+
+
+            <button
+                id="nextLessonBtn"
+                class="navigation-btn"
+                type="button"
+                aria-label="الدرس التالي"
+            >
+
+                <span>
+                    التالي
+                </span>
+
+                <span>
+                    ←
+                </span>
+
+            </button>
+
+
+        </footer>
+
+
+    </article>
+
+</div>
+
+
+
+<!-- =====================================================
+     SIDE MENU
+====================================================== -->
+
+<aside
+    id="sideMenu"
+    class="side-menu"
+    aria-label="القائمة الرئيسية"
+>
+
+
+    <div class="side-menu-header">
+
+
+        <div
+            class="app-logo"
+            aria-hidden="true"
+        >
+            4MS
+        </div>
+
+
+        <div>
+
+            <h2>
+                English
+            </h2>
+
+            <span>
+                السنة الرابعة متوسط
+            </span>
+
+        </div>
+
+
+        <button
+            id="closeMenuBtn"
+            class="icon-btn"
+            type="button"
+            aria-label="إغلاق القائمة"
+        >
+            ×
+        </button>
+
+
+    </div>
+
+
+
+    <nav class="side-navigation">
+
+
+        <!-- DARK MODE -->
+
+        <button
+            id="themeToggleBtn"
+            class="side-action-btn"
+            type="button"
+        >
+
+            <span>
+                🌙
+            </span>
+
+            <span>
+                الوضع الليلي
+            </span>
+
+        </button>
+
+
+
+        <!-- LESSONS -->
+
+        <button
+            class="side-nav-item active"
+            type="button"
+            data-view="lessons"
+            aria-current="page"
+        >
+
+            <span aria-hidden="true">
+                📚
+            </span>
+
+            <span>
+                الدروس
+            </span>
+
+        </button>
+
+
+
+        <!-- FAVORITES -->
+
+        <button
+            class="side-nav-item"
+            type="button"
+            data-view="favorites"
+        >
+
+            <span aria-hidden="true">
+                ⭐
+            </span>
+
+            <span>
+                المفضلة
+            </span>
+
+        </button>
+
+
+
+        <!-- PROGRESS -->
+
+        <button
+            class="side-nav-item"
+            type="button"
+            data-view="progress"
+        >
+
+            <span aria-hidden="true">
+                📊
+            </span>
+
+            <span>
+                تقدمي
+            </span>
+
+        </button>
+
+
+    </nav>
+
+
+
+    <!-- ACTIONS -->
+
+    <div class="side-menu-actions">
+
+
+        <button
+            id="continueMenuBtn"
+            class="side-action-btn"
+            type="button"
+        >
+
+            <span>
+                ▶️
+            </span>
+
+            <span>
+                متابعة التعلم
+            </span>
+
+        </button>
+
+
+        <button
+            id="resetProgressBtn"
+            class="side-action-btn danger"
+            type="button"
+        >
+
+            <span>
+                🗑️
+            </span>
+
+            <span>
+                إعادة ضبط التقدم
+            </span>
+
+        </button>
+
+
+    </div>
+
+
+
+    <!-- FOOTER -->
+
+    <div class="side-menu-footer">
+
+
+        <p>
+            تعلم الإنجليزية للسنة الرابعة متوسط
+        </p>
+
+
+        <p class="copyright">
+            © 2026 English_BN — All rights reserved.
+        </p>
+
+
+    </div>
+
+
+</aside>
+
+
+
+<!-- =====================================================
+     MENU OVERLAY
+====================================================== -->
+
+<div
+    id="menuOverlay"
+    class="menu-overlay"
+    aria-hidden="true"
+></div>
+
+
+
+<!-- =====================================================
+     RESET MODAL
+====================================================== -->
+
+<div
+    id="resetModal"
+    class="confirm-modal hidden"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="resetModalTitle"
+>
+
+
+    <div
+        id="resetModalOverlay"
+        class="confirm-overlay"
+    ></div>
+
+
+    <div class="confirm-box">
+
+
+        <div
+            class="confirm-icon"
+            aria-hidden="true"
+        >
+            ⚠️
+        </div>
+
+
+        <h3 id="resetModalTitle">
+            إعادة ضبط التقدم؟
+        </h3>
+
+
+        <p>
+            سيتم حذف جميع الدروس المكتملة وإعادة ضبط تقدمك.
+            لا يمكن التراجع عن هذا الإجراء.
+        </p>
+
+
+        <div class="confirm-actions">
+
+
+            <button
+                id="cancelResetBtn"
+                class="confirm-btn cancel"
+                type="button"
+            >
+                إلغاء
+            </button>
+
+
+            <button
+                id="confirmResetBtn"
+                class="confirm-btn danger"
+                type="button"
+            >
+                إعادة ضبط
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     TOAST
+====================================================== -->
+
+<div
+    id="toast"
+    class="toast"
+    role="status"
+    aria-live="polite"
+    aria-atomic="true"
+>
+
+    <span id="toastMessage">
+        تم الحفظ
+    </span>
+
+</div>
+
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script
+    src="script.js"
+    defer
+></script>
+
+
+</body>
+
+</html>
