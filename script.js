@@ -2169,6 +2169,115 @@ function renderQuestions() {
 
 
 
+/* =========================================================
+   SWIPE NAVIGATION — MOBILE
+========================================================= */
+
+let touchStartX = 0;
+let touchStartY = 0;
+
+
+document.addEventListener("touchstart", (event) => {
+
+    if (
+        !DOM.readerModal ||
+        DOM.readerModal.classList.contains("hidden")
+    ) {
+        return;
+    }
+
+
+    const touch =
+        event.changedTouches[0];
+
+
+    touchStartX =
+        touch.clientX;
+
+
+    touchStartY =
+        touch.clientY;
+
+}, { passive: true });
+
+
+document.addEventListener("touchend", (event) => {
+
+    if (
+        !DOM.readerModal ||
+        DOM.readerModal.classList.contains("hidden")
+    ) {
+        return;
+    }
+
+
+    const touch =
+        event.changedTouches[0];
+
+
+    const touchEndX =
+        touch.clientX;
+
+
+    const touchEndY =
+        touch.clientY;
+
+
+    const deltaX =
+        touchEndX - touchStartX;
+
+
+    const deltaY =
+        touchEndY - touchStartY;
+
+
+    /* تجاهل السحب العمودي */
+
+    if (
+        Math.abs(deltaY) >
+        Math.abs(deltaX)
+    ) {
+        return;
+    }
+
+
+    /* الحد الأدنى للسحب */
+
+    const SWIPE_THRESHOLD = 60;
+
+
+    if (
+        Math.abs(deltaX) <
+        SWIPE_THRESHOLD
+    ) {
+        return;
+    }
+
+
+    /* =========================================
+       من اليمين → اليسار
+       الدرس السابق
+    ========================================= */
+
+    if (deltaX < 0) {
+
+        previousLesson();
+
+    }
+
+
+    /* =========================================
+       من اليسار → اليمين
+       الدرس التالي
+    ========================================= */
+
+    else {
+
+        nextLesson();
+
+    }
+
+}, { passive: true });
 
 
 /* =========================================================
@@ -2818,7 +2927,7 @@ function resetSpeechButton() {
             </span>
 
             <span>
-                Listen
+                القراءة 
             </span>
 
         `;

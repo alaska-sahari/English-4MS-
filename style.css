@@ -3014,52 +3014,6 @@ textarea {
 }
 
 
-/* =========================================================
-   37 — SCROLLBAR
-========================================================= */
-
-::-webkit-scrollbar {
-
-    width:
-        5px;
-
-    height:
-        5px;
-}
-
-
-::-webkit-scrollbar-track {
-    background:
-        transparent;
-}
-
-
-::-webkit-scrollbar-thumb {
-
-    background:
-        linear-gradient(
-            180deg,
-            #8f78e8,
-            #e783b0,
-            #65b5ed
-        );
-
-    border-radius:
-        20px;
-}
-
-
-/* Firefox */
-
-* {
-    scrollbar-width:
-        thin;
-
-    scrollbar-color:
-        #9a7be8
-        transparent;
-}
-
 
 /* =========================================================
    38 — HIDDEN
@@ -3363,5 +3317,488 @@ textarea {
 
         height:
             38px;
+    }
+}
+
+
+
+/* =========================================================
+   AUDIO / TEXT TO SPEECH
+   Soft Glass • Comfortable • Light / Dark
+========================================================= */
+
+
+/* =========================================================
+   AUDIO SECTION
+========================================================= */
+
+.audio-section {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   SPEAK / STOP BUTTONS
+========================================================= */
+
+.speak-btn,
+.stop-speak-btn {
+
+    min-height: 46px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding:
+        0 17px;
+
+    border-radius:
+        var(--radius-md);
+
+    font-family:
+        inherit;
+
+    font-size:
+        14px;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+
+    transition:
+        background var(--transition),
+        border-color var(--transition),
+        color var(--transition),
+        box-shadow var(--transition),
+        transform var(--transition);
+}
+
+
+/* =========================================================
+   READING BUTTON
+========================================================= */
+
+.speak-btn {
+
+    flex: 1;
+
+    background:
+        var(--glass-light);
+
+    color:
+        #ffffff;
+
+    border:
+        1px solid
+        rgba(255,255,255,.18);
+
+    box-shadow:
+        0 7px 20px
+        rgba(134,87,245,.20);
+}
+
+
+.speak-btn:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 10px 26px
+        rgba(134,87,245,.27);
+}
+
+
+.speak-btn:active {
+
+    transform:
+        scale(.97);
+}
+
+
+/* =========================================================
+   SPEAKER ICON
+========================================================= */
+
+.speak-icon {
+
+    width:
+        29px;
+
+    height:
+        29px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex-shrink:
+        0;
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(255,255,255,.16);
+
+    font-size:
+        16px;
+
+    transition:
+        transform var(--transition),
+        background var(--transition);
+}
+
+
+.speak-btn:hover .speak-icon {
+
+    transform:
+        scale(1.08);
+
+    background:
+        rgba(255,255,255,.22);
+}
+
+
+/* =========================================================
+   STOP BUTTON
+========================================================= */
+
+.stop-speak-btn {
+
+    background:
+        var(--glass-light);
+
+    border:
+        1px solid
+        var(--glass-border);
+
+    color:
+        var(--text-soft);
+
+    box-shadow:
+        0 4px 14px
+        rgba(76,55,130,.06);
+}
+
+
+.stop-speak-btn:hover {
+
+    background:
+        var(--red-soft);
+
+    border-color:
+        rgba(255,89,100,.25);
+
+    color:
+        var(--danger);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================================================
+   SPEECH RATE CONTROL
+========================================================= */
+
+.speech-controls {
+
+    width:
+        100%;
+
+    margin-top:
+        12px;
+
+    padding:
+        11px
+        13px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        12px;
+
+    border-radius:
+        var(--radius-md);
+
+    background:
+        var(--glass-light);
+
+    border:
+        1px solid
+        var(--glass-border);
+
+    transition:
+        background var(--transition),
+        border-color var(--transition);
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.speech-controls label {
+
+    color:
+        var(--text-soft);
+
+    font-size:
+        12px;
+
+    font-weight:
+        700;
+
+    white-space:
+        nowrap;
+}
+
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+#speechRate {
+
+    min-width:
+        150px;
+
+    height:
+        40px;
+
+    padding:
+        0 12px;
+
+    border:
+        1px solid
+        var(--glass-border);
+
+    border-radius:
+        11px;
+
+    background:
+        var(--glass);
+
+    color:
+        var(--text);
+
+    font-family:
+        inherit;
+
+    font-size:
+        12px;
+
+    font-weight:
+        650;
+
+    outline:
+        none;
+
+    cursor:
+        pointer;
+
+    transition:
+        background var(--transition),
+        border-color var(--transition),
+        color var(--transition),
+        box-shadow var(--transition);
+}
+
+
+#speechRate:hover {
+
+    border-color:
+        color-mix(
+            in srgb,
+            var(--primary) 40%,
+            var(--glass-border)
+        );
+}
+
+
+#speechRate:focus {
+
+    border-color:
+        var(--primary);
+
+    box-shadow:
+        0 0 0 3px
+        var(--primary-soft);
+}
+
+
+/* =========================================================
+   SELECT OPTIONS
+========================================================= */
+
+#speechRate option {
+
+    background:
+        var(--bg-soft);
+
+    color:
+        var(--text);
+}
+
+
+/* =========================================================
+   FOCUS ACCESSIBILITY
+========================================================= */
+
+.speak-btn:focus-visible,
+.stop-speak-btn:focus-visible,
+#speechRate:focus-visible {
+
+    outline:
+        2px solid
+        var(--primary);
+
+    outline-offset:
+        3px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .audio-section {
+
+        gap:
+            8px;
+
+        margin-top:
+            16px;
+    }
+
+
+    .speak-btn,
+    .stop-speak-btn {
+
+        min-height:
+            44px;
+
+        padding:
+            0 13px;
+
+        border-radius:
+            13px;
+
+        font-size:
+            13px;
+    }
+
+
+    .speak-icon {
+
+        width:
+            27px;
+
+        height:
+            27px;
+
+        border-radius:
+            9px;
+
+        font-size:
+            15px;
+    }
+
+
+    .speech-controls {
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+        gap:
+            8px;
+
+        padding:
+            12px;
+    }
+
+
+    .speech-controls label {
+
+        font-size:
+            12px;
+    }
+
+
+    #speechRate {
+
+        width:
+            100%;
+
+        min-width:
+            0;
+
+        height:
+            42px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .speak-btn,
+    .stop-speak-btn {
+
+        padding:
+            0 10px;
+
+        font-size:
+            12px;
+    }
+
+
+    .speak-icon {
+
+        width:
+            25px;
+
+        height:
+            25px;
+
+        font-size:
+            14px;
     }
 }
