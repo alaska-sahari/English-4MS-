@@ -347,15 +347,19 @@ document.addEventListener(
 
 async function init() {
 
-    loadStorage();
+  loadStorage();
 
-    bindEvents();
+  bindEvents();
 
-    await loadAllChapters();
+  await loadAllChapters();
 
-    updateThemeButton();
+  updateThemeButton();
 
-    updateUI();
+  updateUI();
+
+  /* فتح الدرس القادم من رابط GitHub Pages */
+
+  openLessonFromURL();
 
 }
 
@@ -3796,3 +3800,131 @@ console.log(
     "English+ 4MS application loaded successfully."
 
 );
+
+
+
+function openLessonFromURL() {
+
+    const params =
+        new URLSearchParams(
+            window.location.search
+        );
+
+    const chapter =
+        params.get("chapter");
+
+    const lessonId =
+        params.get("lesson");
+
+
+    if (!chapter || !lessonId) {
+        return;
+    }
+
+
+    if (
+        !CONFIG.CHAPTERS.includes(
+            chapter
+        )
+    ) {
+        return;
+    }
+
+
+    const lessons =
+        AppState.data[chapter]?.lessons || [];
+
+
+    const index =
+        lessons.findIndex(
+
+            (lesson, lessonIndex) =>
+
+                getLessonId(
+                    lesson,
+                    lessonIndex
+                ) === String(lessonId)
+
+        );
+
+
+    if (index === -1) {
+
+        console.warn(
+            "Lesson from URL not found:",
+            chapter,
+            lessonId
+        );
+
+        return;
+    }
+
+
+    /* تحديد الفصل */
+
+    AppState.currentChapter =
+        chapter;
+
+
+    /* تحديد الدرس */
+
+    AppState.currentLessonIndex =
+        index;
+
+
+    AppState.currentLesson =
+        lessons[index];
+
+
+    /* إلغاء البحث والمفضلة */
+
+    AppState.searchQuery =
+        "";
+
+    AppState.showFavoritesOnly =
+        false;
+
+
+    /* حفظ آخر درس */
+
+    saveStorage();
+
+    saveLastLesson(
+        getLessonId(
+            AppState.currentLesson,
+            index
+        ),
+        chapter
+    );
+
+
+    /* تحديث الواجهة */
+
+    updateActiveChapter();
+
+    renderLessons();
+
+
+    /* فتح Reader */
+
+    renderReader();
+
+
+    DOM.readerModal?.classList.remove(
+        "hidden"
+    );
+
+
+    document.body.style.overflow =
+        "hidden";
+
+
+    /* تنظيف الرابط */
+
+    window.history.replaceState(
+        {},
+        document.title,
+        window.location.pathname
+    );
+
+}
