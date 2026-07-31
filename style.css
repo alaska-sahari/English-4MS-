@@ -1,7 +1,4 @@
-/* =========================================================
-   VIBRANT KIDS COLOR SYSTEM
-   Bright • Cheerful • Colorful • Friendly
-========================================================= */
+
 
 :root {
 
@@ -44,50 +41,28 @@
         rgba(134, 87, 245, 0.14);
 
 
-    /* =====================================================
-       VIBRANT KIDS PALETTE
-    ===================================================== */
+    /* ---------- Accent Colors ---------- */
 
     --pink: #ff4f9a;
-
-    --pink-soft:
-        rgba(255, 79, 154, 0.16);
-
+    --pink-soft: rgba(255, 79, 154, 0.16);
 
     --blue: #329cff;
-
-    --blue-soft:
-        rgba(50, 156, 255, 0.16);
-
+    --blue-soft: rgba(50, 156, 255, 0.16);
 
     --cyan: #19c7d8;
-
-    --cyan-soft:
-        rgba(25, 199, 216, 0.16);
-
+    --cyan-soft: rgba(25, 199, 216, 0.16);
 
     --green: #38c982;
-
-    --green-soft:
-        rgba(56, 201, 130, 0.16);
-
+    --green-soft: rgba(56, 201, 130, 0.16);
 
     --yellow: #ffc52e;
-
-    --yellow-soft:
-        rgba(255, 197, 46, 0.18);
-
+    --yellow-soft: rgba(255, 197, 46, 0.18);
 
     --orange: #ff8738;
-
-    --orange-soft:
-        rgba(255, 135, 56, 0.17);
-
+    --orange-soft: rgba(255, 135, 56, 0.17);
 
     --red: #ff5964;
-
-    --red-soft:
-        rgba(255, 89, 100, 0.15);
+    --red-soft: rgba(255, 89, 100, 0.15);
 
 
     /* ---------- Status ---------- */
@@ -97,29 +72,27 @@
     --danger: #ff5968;
 
 
-    /* =====================================================
-       LEVEL COLORS
-    ===================================================== */
+    /* ---------- Chapter Colors ---------- */
 
-    --a1: #2998f5;
+    --chapter-1: #4da9f5;
+    --chapter-2: #45c994;
+    --chapter-3: #f2b83f;
 
-    --a2: #27c77d;
 
-    --b1: #ffbd18;
+    /* ---------- Lesson Colors ---------- */
 
-    --b2: #ff8038;
-
-    --c1: #ff4f9a;
-
-    --c2: #8657f5;
+    --lesson-blue: #55aaf5;
+    --lesson-green: #54c993;
+    --lesson-yellow: #f4c34f;
+    --lesson-orange: #f29a5b;
+    --lesson-pink: #ed82b1;
+    --lesson-purple: #9877e8;
 
 
     /* ---------- Radius ---------- */
 
     --radius-sm: 11px;
-
     --radius-md: 17px;
-
     --radius-lg: 24px;
 
 
@@ -130,7 +103,7 @@
         rgba(76, 55, 130, 0.13);
 
 
-    /* ---------- Animation ---------- */
+    /* ---------- Transition ---------- */
 
     --transition:
         0.25s
@@ -140,11 +113,16 @@
             0.36,
             1
         );
+
+
+    /* ---------- Reader Title ---------- */
+
+    --title-color: #3b8ea5;
 }
 
 
 /* =========================================================
-   VIBRANT DARK THEME
+   02 — DARK THEME
 ========================================================= */
 
 [data-theme="dark"] {
@@ -186,65 +164,28 @@
         rgba(167, 122, 255, 0.18);
 
 
-    /* =====================================================
-       VIBRANT DARK KIDS PALETTE
-    ===================================================== */
+    /* ---------- Accent Colors ---------- */
 
     --pink: #ff62aa;
-
-    --pink-soft:
-        rgba(255, 98, 170, 0.18);
-
+    --pink-soft: rgba(255, 98, 170, 0.18);
 
     --blue: #45aaff;
-
-    --blue-soft:
-        rgba(69, 170, 255, 0.18);
-
+    --blue-soft: rgba(69, 170, 255, 0.18);
 
     --cyan: #27d8e8;
-
-    --cyan-soft:
-        rgba(39, 216, 232, 0.18);
-
+    --cyan-soft: rgba(39, 216, 232, 0.18);
 
     --green: #45d993;
-
-    --green-soft:
-        rgba(69, 217, 147, 0.18);
-
+    --green-soft: rgba(69, 217, 147, 0.18);
 
     --yellow: #ffd34d;
-
-    --yellow-soft:
-        rgba(255, 211, 77, 0.18);
-
+    --yellow-soft: rgba(255, 211, 77, 0.18);
 
     --orange: #ff914b;
-
-    --orange-soft:
-        rgba(255, 145, 75, 0.18);
-
+    --orange-soft: rgba(255, 145, 75, 0.18);
 
     --red: #ff6672;
-
-    --red-soft:
-        rgba(255, 102, 114, 0.18);
-
-
-    /* ---------- Levels ---------- */
-
-    --a1: #42adff;
-
-    --a2: #42dc96;
-
-    --b1: #ffd34a;
-
-    --b2: #ff9552;
-
-    --c1: #ff68ad;
-
-    --c2: #aa7cff;
+    --red-soft: rgba(255, 102, 114, 0.18);
 
 
     /* ---------- Status ---------- */
@@ -259,15 +200,33 @@
     --shadow:
         0 14px 45px
         rgba(0, 0, 0, 0.45);
+
+
+    /* ---------- Reader Title ---------- */
+
+    --title-color: #6fb7ca;
 }
+
+
 /* =========================================================
-   03 — GLOBAL
+   03 — GLOBAL RESET
 ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
 
 html {
 
-    background: var(--bg);
-    color: var(--text);
+    min-height: 100%;
+
+    background:
+        var(--bg);
+
+    color:
+        var(--text);
+
     color-scheme: light;
 
     transition:
@@ -275,13 +234,17 @@ html {
         color var(--transition);
 }
 
+
 html[data-theme="dark"] {
     color-scheme: dark;
 }
 
 
 body {
+
     min-height: 100vh;
+
+    margin: 0;
 
     font-family:
         Inter,
@@ -294,26 +257,28 @@ body {
     background:
         radial-gradient(
             circle at 0% 0%,
-            rgba(99, 102, 241, 0.16),
+            rgba(99, 102, 241, 0.10),
             transparent 28%
         ),
         radial-gradient(
             circle at 100% 10%,
-            rgba(236, 72, 153, 0.13),
+            rgba(236, 72, 153, 0.08),
             transparent 25%
         ),
         radial-gradient(
             circle at 50% 100%,
-            rgba(14, 165, 233, 0.12),
+            rgba(14, 165, 233, 0.07),
             transparent 30%
         ),
         var(--bg);
 
-    color: var(--text);
+    color:
+        var(--text);
 
     line-height: 1.6;
 
-    -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing:
+        antialiased;
 
     overflow-x: hidden;
 
@@ -322,17 +287,26 @@ body {
         color 0.35s ease;
 }
 
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+
 button {
 
     border: 0;
 
-    font: inherit;
-
-    color: inherit;
+    color:
+        inherit;
 
     cursor: pointer;
 
-    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color:
+        transparent;
 }
 
 
@@ -347,7 +321,14 @@ button:focus-visible {
         2px solid
         var(--primary);
 
-    outline-offset: 3px;
+    outline-offset:
+        3px;
+}
+
+
+input,
+textarea {
+    outline: none;
 }
 
 
@@ -376,6 +357,8 @@ button:focus-visible {
     align-items: center;
 
     justify-content: space-between;
+
+    gap: 12px;
 
     padding:
         10px
@@ -433,6 +416,8 @@ button:focus-visible {
     width: 42px;
     height: 42px;
 
+    flex-shrink: 0;
+
     display: flex;
 
     align-items: center;
@@ -454,30 +439,38 @@ button:focus-visible {
 
     transition:
         background var(--transition),
-        transform var(--transition);
-}
-
-
-.icon-btn:nth-child(1) {
-    background: rgba(95, 174, 247, .12);
-}
-
-.icon-btn:nth-child(2) {
-    background: rgba(245, 139, 181, .12);
-}
-
-.icon-btn:nth-child(3) {
-    background: rgba(112, 201, 154, .12);
+        transform var(--transition),
+        color var(--transition);
 }
 
 
 .icon-btn:hover {
 
     background:
-        rgba(139, 110, 232, .10);
+        rgba(139, 110, 232, 0.10);
 
     transform:
         translateY(-2px);
+}
+
+
+/* Header button colors */
+
+.header-actions .icon-btn:nth-child(1) {
+    background:
+        rgba(95, 174, 247, .12);
+}
+
+
+.header-actions .icon-btn:nth-child(2) {
+    background:
+        rgba(245, 139, 181, .12);
+}
+
+
+.header-actions .icon-btn:nth-child(3) {
+    background:
+        rgba(112, 201, 154, .12);
 }
 
 
@@ -500,25 +493,36 @@ button:focus-visible {
     width: 40px;
     height: 40px;
 
+    flex-shrink: 0;
+
     display: flex;
 
     align-items: center;
     justify-content: center;
 
     border-radius: 12px;
-    border: 1px solid ghostwhite;
+
+    border:
+        1px solid
+        rgba(255,255,255,.9);
 
     background:
-    transparent;
+        linear-gradient(
+            135deg,
+            rgba(134,87,245,.14),
+            rgba(255,79,154,.10)
+        );
 
-    color: ghos;
+    color:
+        var(--primary);
 
     font-size: 16px;
+
     font-weight: 800;
 
     box-shadow:
         0 7px 22px
-        rgba(168,120,240,.28);
+        rgba(168,120,240,.20);
 }
 
 
@@ -532,7 +536,8 @@ button:focus-visible {
 
     line-height: 1.2;
 
-    letter-spacing: -0.3px;
+    letter-spacing:
+        -0.3px;
 }
 
 
@@ -552,7 +557,142 @@ button:focus-visible {
 
 
 /* =========================================================
-   07 — MAIN
+   07 — SEARCH
+========================================================= */
+
+.search-panel {
+
+    padding:
+        12px
+        16px;
+
+    background:
+        var(--glass);
+
+    border-bottom:
+        1px solid
+        var(--glass-border);
+}
+
+
+.search-box {
+
+    max-width: 900px;
+
+    height: 46px;
+
+    margin:
+        0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding:
+        0
+        14px;
+
+    border-radius:
+        14px;
+
+    background:
+        var(--glass-light);
+
+    border:
+        1px solid
+        var(--glass-border);
+
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+
+.search-box:focus-within {
+
+    border-color:
+        rgba(139,110,232,.35);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(139,110,232,.07);
+}
+
+
+.search-icon {
+
+    flex-shrink: 0;
+
+    color:
+        #8c70df;
+
+    font-size: 16px;
+
+    opacity: .8;
+}
+
+
+.search-box input {
+
+    flex: 1;
+
+    min-width: 0;
+
+    border: 0;
+
+    background:
+        transparent;
+
+    color:
+        var(--text);
+
+    font-size: 14px;
+}
+
+
+.search-box input::placeholder {
+    color:
+        var(--text-muted);
+}
+
+
+.clear-search-btn {
+
+    width: 28px;
+    height: 28px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background:
+        var(--glass-light);
+
+    color:
+        var(--text-soft);
+
+    font-size: 18px;
+
+    transition:
+        background var(--transition);
+}
+
+
+.clear-search-btn:hover {
+    background:
+        rgba(139,110,232,.10);
+}
+
+
+/* =========================================================
+   08 — MAIN
 ========================================================= */
 
 .main-content {
@@ -580,7 +720,7 @@ button:focus-visible {
 
 
 /* =========================================================
-   08 — SECTION HEADER
+   09 — SECTION HEADER
 ========================================================= */
 
 .section-header {
@@ -597,21 +737,30 @@ button:focus-visible {
 }
 
 
-.section-header h2 {
+.section-header h2,
+.section-header h3 {
 
     margin: 0;
+
+    color:
+        var(--text);
+
+    line-height: 1.3;
+}
+
+
+.section-header h2 {
 
     font-size: 18px;
 
     font-weight: 750;
 
-    letter-spacing: -0.4px;
+    letter-spacing:
+        -0.4px;
 }
 
 
 .section-header h3 {
-
-    margin: 0;
 
     font-size: 16px;
 
@@ -627,14 +776,14 @@ button:focus-visible {
     color:
         var(--text-muted);
 
-    font-size: 10px;
+    font-size: 11px;
 
     font-weight: 500;
 }
 
 
 /* =========================================================
-   09 — LEVEL SELECTOR
+   10 — CHAPTER SELECTOR
 ========================================================= */
 
 .level-selector {
@@ -677,7 +826,7 @@ button:focus-visible {
         var(--radius-md);
 
     background:
-        rgba(255, 255, 255, 0.06);
+        rgba(255,255,255,.06);
 
     border:
         1px solid
@@ -688,43 +837,49 @@ button:focus-visible {
 
     transition:
         background var(--transition),
-        border var(--transition),
-        transform var(--transition);
+        border-color var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
 }
 
 
-/* ---------- Level Colors ---------- */
+/* Chapter 1 */
 
 .level-btn:nth-child(1) {
-    --level-color: #4da9f5;
-    --level-bg: rgba(77,169,245,.16);
+
+    --level-color:
+        var(--chapter-1);
+
+    --level-bg:
+        rgba(77,169,245,.16);
 }
+
+
+/* Chapter 2 */
 
 .level-btn:nth-child(2) {
-    --level-color: #45c994;
-    --level-bg: rgba(69,201,148,.16);
+
+    --level-color:
+        var(--chapter-2);
+
+    --level-bg:
+        rgba(69,201,148,.16);
 }
+
+
+/* Chapter 3 */
 
 .level-btn:nth-child(3) {
-    --level-color: #f2b83f;
-    --level-bg: rgba(242,184,63,.18);
+
+    --level-color:
+        var(--chapter-3);
+
+    --level-bg:
+        rgba(242,184,63,.18);
 }
 
-.level-btn:nth-child(4) {
-    --level-color: #f18b4f;
-    --level-bg: rgba(241,139,79,.16);
-}
 
-.level-btn:nth-child(5) {
-    --level-color: #e875aa;
-    --level-bg: rgba(232,117,170,.16);
-}
-
-.level-btn:nth-child(6) {
-    --level-color: #9272e8;
-    --level-bg: rgba(146,114,232,.17);
-}
-
+/* Decorative circle */
 
 .level-btn::before {
 
@@ -743,7 +898,8 @@ button:focus-visible {
     background:
         var(--level-color);
 
-    opacity: .28;
+    opacity:
+        .28;
 }
 
 
@@ -751,10 +907,10 @@ button:focus-visible {
 
     position: relative;
 
-    font-size: 17px;
-
     color:
         var(--text);
+
+    font-size: 17px;
 
     font-weight: 800;
 }
@@ -764,10 +920,10 @@ button:focus-visible {
 
     position: relative;
 
-    font-size: 11px;
-
     color:
         var(--text-muted);
+
+    font-size: 11px;
 
     font-weight: 500;
 
@@ -775,13 +931,18 @@ button:focus-visible {
 }
 
 
-.level-btn:hover {
+.level-btn:hover,
+.level-btn.active {
 
     background:
         var(--level-bg);
 
     border-color:
         var(--level-color);
+}
+
+
+.level-btn:hover {
 
     transform:
         translateY(-3px);
@@ -790,11 +951,8 @@ button:focus-visible {
 
 .level-btn.active {
 
-    background:
-        var(--level-bg);
-
-    border-color:
-        var(--level-color);
+    transform:
+        translateY(-2px);
 
     box-shadow:
         0 8px 24px
@@ -803,9 +961,6 @@ button:focus-visible {
             var(--level-color) 18%,
             transparent
         );
-
-    transform:
-        translateY(-2px);
 }
 
 
@@ -845,27 +1000,23 @@ button:focus-visible {
 
 
 /* =========================================================
-   10 — LESSON STATUS
+   11 — LESSON HEADER
 ========================================================= */
-
-.lesson-status {
-
-    background:
-        var(--primary-soft);
-
-    border-radius: 40%;
-}
-
 
 .lesson-count {
 
-    display: none;
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
 
     padding:
         6px
         10px;
 
-    border-radius: 20px;
+    border-radius:
+        20px;
 
     background:
         var(--glass-light);
@@ -881,20 +1032,8 @@ button:focus-visible {
 }
 
 
-#lessonsTitle,
-#lessonsSubtitle {
-
-    display: none;
-
-    font-size: 10px;
-
-    color:
-        var(--text-soft);
-}
-
-
 /* =========================================================
-   11 — LESSON LIST
+   12 — LESSON LIST
 ========================================================= */
 
 .lessons-list {
@@ -908,12 +1047,14 @@ button:focus-visible {
 
 
 /* =========================================================
-   12 — LESSON CARD
+   13 — LESSON CARD
 ========================================================= */
 
 .lesson-card {
 
     position: relative;
+
+    min-height: 74px;
 
     display: flex;
 
@@ -921,7 +1062,8 @@ button:focus-visible {
 
     gap: 14px;
 
-    padding: 16px;
+    padding:
+        16px;
 
     overflow: hidden;
 
@@ -929,16 +1071,22 @@ button:focus-visible {
         var(--radius-md);
 
     background:
-        var(--glass-n);
+        var(--glass);
 
     border:
         1px solid
         var(--glass-border);
 
+    color:
+        var(--text);
+
+    cursor: pointer;
+
     transition:
         background var(--transition),
         transform var(--transition),
-        border var(--transition);
+        border-color var(--transition),
+        box-shadow var(--transition);
 }
 
 
@@ -954,35 +1102,57 @@ button:focus-visible {
     width: 4px;
     height: 100%;
 
-    border-radius: 10px;
+    border-radius:
+        10px;
 
-    opacity: .85;
+    opacity:
+        .85;
 }
 
 
 .lesson-card:hover {
-    transform: translateY(-1px);
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 8px 25px
+        rgba(76,55,130,.07);
 }
 
 
 /* ---------- Lesson Rainbow ---------- */
 
 .lesson-card:nth-child(6n + 1)::after {
-    background: #55aaf5;
+    background: var(--lesson-blue);
 }
+
+.lesson-card:nth-child(6n + 2)::after {
+    background: var(--lesson-green);
+}
+
+.lesson-card:nth-child(6n + 3)::after {
+    background: var(--lesson-yellow);
+}
+
+.lesson-card:nth-child(6n + 4)::after {
+    background: var(--lesson-orange);
+}
+
+.lesson-card:nth-child(6n + 5)::after {
+    background: var(--lesson-pink);
+}
+
+.lesson-card:nth-child(6n)::after {
+    background: var(--lesson-purple);
+}
+
+
+/* ---------- Number Colors ---------- */
 
 .lesson-card:nth-child(6n + 1) .lesson-number {
     background: rgba(85,170,245,.15);
     color: #4298e8;
-}
-
-.lesson-card:nth-child(6n + 1):hover {
-    background: rgba(85,170,245,.08);
-}
-
-
-.lesson-card:nth-child(6n + 2)::after {
-    background: #54c993;
 }
 
 .lesson-card:nth-child(6n + 2) .lesson-number {
@@ -990,27 +1160,9 @@ button:focus-visible {
     color: #3eb27d;
 }
 
-.lesson-card:nth-child(6n + 2):hover {
-    background: rgba(84,201,147,.08);
-}
-
-
-.lesson-card:nth-child(6n + 3)::after {
-    background: #f4c34f;
-}
-
 .lesson-card:nth-child(6n + 3) .lesson-number {
     background: rgba(244,195,79,.17);
     color: #dba72d;
-}
-
-.lesson-card:nth-child(6n + 3):hover {
-    background: rgba(244,195,79,.08);
-}
-
-
-.lesson-card:nth-child(6n + 4)::after {
-    background: #f29a5b;
 }
 
 .lesson-card:nth-child(6n + 4) .lesson-number {
@@ -1018,27 +1170,9 @@ button:focus-visible {
     color: #e27e38;
 }
 
-.lesson-card:nth-child(6n + 4):hover {
-    background: rgba(242,154,91,.08);
-}
-
-
-.lesson-card:nth-child(6n + 5)::after {
-    background: #ed82b1;
-}
-
 .lesson-card:nth-child(6n + 5) .lesson-number {
     background: rgba(237,130,177,.16);
     color: #dc679a;
-}
-
-.lesson-card:nth-child(6n + 5):hover {
-    background: rgba(237,130,177,.08);
-}
-
-
-.lesson-card:nth-child(6n)::after {
-    background: #9877e8;
 }
 
 .lesson-card:nth-child(6n) .lesson-number {
@@ -1046,12 +1180,35 @@ button:focus-visible {
     color: #8060d7;
 }
 
+
+/* ---------- Hover Colors ---------- */
+
+.lesson-card:nth-child(6n + 1):hover {
+    background: rgba(85,170,245,.08);
+}
+
+.lesson-card:nth-child(6n + 2):hover {
+    background: rgba(84,201,147,.08);
+}
+
+.lesson-card:nth-child(6n + 3):hover {
+    background: rgba(244,195,79,.08);
+}
+
+.lesson-card:nth-child(6n + 4):hover {
+    background: rgba(242,154,91,.08);
+}
+
+.lesson-card:nth-child(6n + 5):hover {
+    background: rgba(237,130,177,.08);
+}
+
 .lesson-card:nth-child(6n):hover {
     background: rgba(152,119,232,.08);
 }
 
 
-/* ---------- Lesson Content ---------- */
+/* ---------- Lesson Number ---------- */
 
 .lesson-number {
 
@@ -1065,13 +1222,16 @@ button:focus-visible {
     align-items: center;
     justify-content: center;
 
-    border-radius: 12px;
+    border-radius:
+        12px;
 
     font-size: 13px;
 
     font-weight: 800;
 }
 
+
+/* ---------- Lesson Info ---------- */
 
 .lesson-info {
 
@@ -1085,14 +1245,14 @@ button:focus-visible {
 
     margin: 0;
 
+    color:
+        var(--text);
+
     font-size: 15px;
 
     font-weight: 700;
 
     line-height: 1.4;
-
-    color:
-        var(--text);
 
     overflow: hidden;
 
@@ -1122,128 +1282,121 @@ button:focus-visible {
 }
 
 
-/* =========================================================
-   13 — SEARCH
-========================================================= */
+/* ---------- Lesson Status ---------- */
 
-.search-panel {
+.lesson-status {
 
-    padding:
-        12px
-        16px;
-
-    background:
-        var(--glass);
-
-    border-bottom:
-        1px solid
-        var(--glass-border);
-}
-
-
-.search-box {
-
-    max-width: 900px;
-
-    height: 46px;
-
-    margin: 0 auto;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    padding:
-        0
-        14px;
-
-    border-radius: 14px;
-
-    background:
-        var(--glass-light);
-
-    border:
-        1px solid
-        var(--glass-border);
-
-    transition:
-        border-color var(--transition),
-        box-shadow var(--transition);
-}
-
-
-.search-box:focus-within {
-
-    border-color:
-        rgba(139,110,232,.35);
-
-    box-shadow:
-        0 0 0 3px
-        rgba(139,110,232,.07);
-}
-
-
-.search-icon {
+    min-width: 20px;
 
     color:
-        #8c70df;
+        var(--success);
+
+    font-size: 15px;
+
+    text-align: center;
+}
+
+
+/* ---------- Lesson Favorite ---------- */
+
+.lesson-favorite {
+
+    min-width: 20px;
+
+    color:
+        var(--pink);
 
     font-size: 16px;
 
-    opacity: .8;
+    text-align: center;
 }
 
 
-.search-box input {
+.lesson-card.completed {
 
-    flex: 1;
+    border-color:
+        color-mix(
+            in srgb,
+            var(--success) 20%,
+            var(--glass-border)
+        );
+}
 
-    min-width: 0;
 
-    background: transparent;
+.lesson-card.is-favorite {
 
-    border: 0;
+    border-color:
+        color-mix(
+            in srgb,
+            var(--pink) 20%,
+            var(--glass-border)
+        );
+}
 
-    outline: 0;
+
+/* =========================================================
+   14 — EMPTY STATE
+========================================================= */
+
+.empty-state {
+
+    padding:
+        50px
+        20px;
+
+    text-align: center;
 
     color:
-        var(--text);
-
-    font-size: 14px;
+        var(--text-muted);
 }
 
 
-.search-box input::placeholder {
-    color: var(--text-muted);
+.empty-icon {
+
+    margin-bottom:
+        12px;
+
+    font-size:
+        32px;
+
+    opacity:
+        .6;
 }
 
 
-.clear-search-btn {
+.empty-state h3 {
 
-    width: 28px;
-    height: 28px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 8px;
-
-    background:
-        var(--glass-light);
+    margin: 0;
 
     color:
         var(--text-soft);
 
-    font-size: 18px;
+    font-size:
+        17px;
+}
+
+
+.empty-state p {
+
+    margin:
+        5px 0 0;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.6;
+}
+
+
+.empty-state strong {
+    color:
+        var(--text-soft);
 }
 
 
 /* =========================================================
-   14 — READER MODAL
+   15 — READER MODAL
 ========================================================= */
 
 .modal {
@@ -1257,6 +1410,7 @@ button:focus-visible {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 }
 
@@ -1293,6 +1447,8 @@ button:focus-visible {
 
     flex-direction: column;
 
+    overflow: hidden;
+
     background:
         var(--bg-soft);
 
@@ -1307,7 +1463,7 @@ button:focus-visible {
 
 
 /* =========================================================
-   15 — READER HEADER
+   16 — READER HEADER
 ========================================================= */
 
 .reader-header {
@@ -1342,28 +1498,42 @@ button:focus-visible {
     align-items: center;
 
     gap: 8px;
+
+    min-width: 0;
 }
 
 
 .reader-level {
 
+    max-width: 180px;
+
     padding:
         4px
         9px;
 
-    border-radius: 7px;
+    border-radius:
+        7px;
 
-    background:transparent;
+    background:
+        transparent;
 
-    color:var(--text-muted) ;
+    color:
+        var(--text-muted);
 
-    font-size: 11px;
+    font-size:
+        11px;
 
-    font-weight: 800;
+    font-weight:
+        800;
 
-    box-shadow:
-        0 5px 15px
-        rgba(154,123,232,.20);
+    overflow:
+        hidden;
+
+    text-overflow:
+        ellipsis;
+
+    white-space:
+        nowrap;
 }
 
 
@@ -1372,12 +1542,16 @@ button:focus-visible {
     color:
         var(--text-muted);
 
-    font-size: 12px;
+    font-size:
+        12px;
+
+    white-space:
+        nowrap;
 }
 
 
 /* =========================================================
-   16 — READER CONTENT
+   17 — READER CONTENT
 ========================================================= */
 
 .reader-content {
@@ -1391,15 +1565,22 @@ button:focus-visible {
         20px
         40px;
 
-    overscroll-behavior: contain;
+    overscroll-behavior:
+        contain;
 }
 
 
+/* =========================================================
+   18 — READER TITLE
+========================================================= */
+
 .reader-title-section {
 
-    margin-bottom: 22px;
+    margin-bottom:
+        22px;
 
-    text-align: center;
+    text-align:
+        center;
 }
 
 
@@ -1407,172 +1588,46 @@ button:focus-visible {
 
     margin: 0;
 
-    font-size: 26px;
+    color:
+        var(--title-color);
 
-    line-height: 1.3;
+    font-size:
+        26px;
 
-    font-weight: 800;
+    line-height:
+        1.3;
 
-    letter-spacing: -0.5px;
+    font-weight:
+        800;
+
+    letter-spacing:
+        -0.5px;
+
+    transition:
+        color .3s ease;
 }
 
 
 .reader-title-section p {
-    margin: 8px 0 0;
-    font-size: 26px;
-    color: color-mix(
-        in srgb,
-        var(--title-color) 55%,
-        var(--text-muted)
-    );
-}
-
-
-
-
-
-/* =========================================================
-   17 — AUDIO
-========================================================= */
-
-.audio-section {
-
-    display: flex;
-
-    justify-content: center;
-
-    gap: 10px;
-
-    margin-bottom: 26px;
-}
-
-
-.speak-btn,
-.stop-speak-btn {
-
-    min-height: 42px;
-
-    padding:
-        0
-        16px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 8px;
-
-    border-radius: 12px;
-
-    font-size: 13px;
-
-    font-weight: 700;
-}
-
-
-.speak-btn {
-
-    background:var(--glass-light);
-
-    color: #fff;
-
-    box-shadow:
-        0 8px 22px
-        rgba(139,110,232,.25);
-}
-
-
-.speak-btn:hover {
-    transform: translateY(-2px);
-}
-
-
-.stop-speak-btn {
-
-    background:
-        var(--glass-light);
-
-    color:
-        var(--text-soft);
-
-    border:
-        1px solid
-        var(--glass-border);
-}
-
-
-.stop-speak-btn:hover {
-
-    background:
-        rgba(239,127,136,.12);
-
-    color:
-        var(--danger);
-}
-
-
-/* =========================================================
-   18 — SPEECH SPEED
-========================================================= */
-
-.speech-controls {
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 10px;
 
     margin:
-        -15px
-        0
-        20px;
-}
-
-
-.speech-controls label {
+        8px 0 0;
 
     color:
-        var(--text-soft);
-
-    font-size: 12px;
-
-    font-weight: 600;
-}
-
-
-.speech-controls select {
-
-    padding:
-        8px
-        12px;
-
-    border-radius: 10px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(95,174,247,.10),
-            rgba(139,110,232,.10)
+        color-mix(
+            in srgb,
+            var(--title-color) 55%,
+            var(--text-muted)
         );
 
-    border:
-        1px solid
-        rgba(139,110,232,.20);
+    font-size:
+        17px;
 
-    color:
-        var(--text);
+    line-height:
+        1.6;
 
-    outline: none;
-
-    font-size: 12px;
-}
-
-
-.speech-controls select:focus {
-    border-color: var(--primary);
+    transition:
+        color .3s ease;
 }
 
 
@@ -1582,9 +1637,11 @@ button:focus-visible {
 
 .text-card {
 
-    margin-bottom: 18px;
+    margin-bottom:
+        18px;
 
-    padding: 20px;
+    padding:
+        20px;
 
     border-radius:
         var(--radius-lg);
@@ -1595,49 +1652,51 @@ button:focus-visible {
 }
 
 
+/* ---------- English ---------- */
+
 .english-card {
 
     background:
         linear-gradient(
             135deg,
-            rgba(77, 180, 230, .14),
-            rgba(94, 211, 190, .10)
+            rgba(77,180,230,.14),
+            rgba(94,211,190,.10)
         );
 
     border-color:
-        rgba(77, 180, 230, .25);
+        rgba(77,180,230,.25);
 }
 
+
+/* ---------- Arabic ---------- */
 
 .arabic-card {
 
     background:
         linear-gradient(
             135deg,
-            rgba(244, 139, 174, .13),
-            rgba(255, 184, 132, .10)
+            rgba(244,139,174,.13),
+            rgba(255,184,132,.10)
         );
 
     border-color:
-        rgba(244, 139, 174, .24);
+        rgba(244,139,174,.24);
 }
 
 
-/* =========================
-   DARK MODE
-========================= */
+/* ---------- Dark Reader Cards ---------- */
 
 [data-theme="dark"] .english-card {
 
     background:
         linear-gradient(
             135deg,
-            rgba(52, 155, 207, .17),
-            rgba(57, 185, 163, .12)
+            rgba(52,155,207,.17),
+            rgba(57,185,163,.12)
         );
 
     border-color:
-        rgba(77, 180, 230, .30);
+        rgba(77,180,230,.30);
 }
 
 
@@ -1646,35 +1705,41 @@ button:focus-visible {
     background:
         linear-gradient(
             135deg,
-            rgba(215, 101, 145, .16),
-            rgba(226, 145, 92, .11)
+            rgba(215,101,145,.16),
+            rgba(226,145,92,.11)
         );
 
     border-color:
-        rgba(244, 139, 174, .28);
+        rgba(244,139,174,.28);
 }
 
 
-/* =========================
-   LABEL
-========================= */
+/* =========================================================
+   20 — CARD LABEL
+========================================================= */
 
 .card-label {
 
-    margin-bottom: 14px;
+    margin-bottom:
+        14px;
 
     color:
         var(--text-soft);
 
-    font-size: 12px;
+    font-size:
+        12px;
 
-    font-weight: 750;
+    font-weight:
+        750;
 
-    letter-spacing: .3px;
+    letter-spacing:
+        .3px;
 }
 
 
-
+/* =========================================================
+   21 — READER TEXT
+========================================================= */
 
 .reader-text,
 .reader-translation {
@@ -1682,58 +1747,70 @@ button:focus-visible {
     color:
         var(--text);
 
-    white-space: pre-line;
+    white-space:
+        pre-line;
 
-    font-weight: 500;
+    font-weight:
+        500;
 }
 
 
 .reader-text {
 
-    font-size: 16px;
+    font-size:
+        16px;
 
-    line-height: 2;
+    line-height:
+        2;
 }
 
 
 .reader-translation {
 
-    font-size: 15px;
+    font-size:
+        15px;
 
-    line-height: 2;
+    line-height:
+        2;
 }
 
 
-
-
-
 /* =========================================================
-   20 — QUESTIONS
+   22 — QUESTIONS
 ========================================================= */
 
 .questions-section {
 
-    margin-top: 30px;
+    margin-top:
+        30px;
 
-    padding-top: 10px;
+    padding-top:
+        10px;
 }
 
 
 .questions-container {
 
-    display: flex;
+    display:
+        flex;
 
-    flex-direction: column;
+    flex-direction:
+        column;
 
-    gap: 12px;
+    gap:
+        12px;
 }
 
 
+/* ---------- Question Card ---------- */
+
 .question-card {
 
-    margin-bottom: 18px;
+    margin-bottom:
+        6px;
 
-    padding: 18px;
+    padding:
+        18px;
 
     border-radius:
         var(--radius-md);
@@ -1745,7 +1822,8 @@ button:focus-visible {
     box-shadow:
         var(--shadow);
 
-    cursor: pointer;
+    cursor:
+        default;
 
     color:
         var(--text);
@@ -1818,65 +1896,69 @@ button:focus-visible {
 /* ---------- Dark Questions ---------- */
 
 [data-theme="dark"] .question-card:nth-child(4n + 1) {
-    background: rgba(95,174,247,.10);
+    background:
+        rgba(95,174,247,.10);
 }
+
 
 [data-theme="dark"] .question-card:nth-child(4n + 2) {
-    background: rgba(112,201,154,.10);
+    background:
+        rgba(112,201,154,.10);
 }
+
 
 [data-theme="dark"] .question-card:nth-child(4n + 3) {
-    background: rgba(245,200,91,.10);
+    background:
+        rgba(245,200,91,.10);
 }
+
 
 [data-theme="dark"] .question-card:nth-child(4n) {
-    background: rgba(245,139,181,.10);
-}
-
-
-.question-card:hover {
-    transform: translateY(-2px);
-}
-
-
-.question-card:active {
-    transform: scale(.98);
+    background:
+        rgba(245,139,181,.10);
 }
 
 
 .question-card.has-answer {
+
     border-color:
         var(--primary);
 }
 
 
 /* =========================================================
-   21 — QUESTION HEADER
+   23 — QUESTION HEADER
 ========================================================= */
 
 .question-header {
 
-    cursor: pointer;
+    cursor:
+        pointer;
 }
 
 
 .question-header:hover {
-    opacity: .85;
+    opacity:
+        .85;
 }
 
 
 .question-number {
 
-    display: block;
+    display:
+        block;
 
-    margin-bottom: 8px;
+    margin-bottom:
+        8px;
 
     color:
         var(--primary);
 
-    font-size: .85rem;
+    font-size:
+        .85rem;
 
-    font-weight: 800;
+    font-weight:
+        800;
 }
 
 
@@ -1885,54 +1967,65 @@ button:focus-visible {
     color:
         var(--text);
 
-    font-size: 1rem;
+    font-size:
+        1rem;
 
-    line-height: 1.7;
+    line-height:
+        1.7;
 
-    font-weight: 600;
+    font-weight:
+        600;
 }
 
 
 /* =========================================================
-   22 — USER ANSWER
+   24 — USER ANSWER
 ========================================================= */
 
 .user-answer-section {
 
-    margin-top: 16px;
+    margin-top:
+        16px;
 }
 
 
 .user-answer-section label {
 
-    display: block;
+    display:
+        block;
 
-    margin-bottom: 8px;
+    margin-bottom:
+        8px;
 
     color:
         var(--text-soft);
 
-    font-size: .85rem;
+    font-size:
+        .85rem;
 
-    font-weight: 600;
+    font-weight:
+        600;
 }
 
 
 .user-answer-input {
 
-    width: 100%;
+    width:
+        100%;
 
-    box-sizing: border-box;
+    min-height:
+        90px;
 
     padding:
         12px
         14px;
 
-    border-radius: 14px;
-
     border:
         1px solid
         var(--glass-border);
+
+    border-radius:
+        14px;
 
     background:
         var(--glass-light);
@@ -1940,15 +2033,17 @@ button:focus-visible {
     color:
         var(--text);
 
-    font-family: inherit;
+    font-family:
+        inherit;
 
-    font-size: .95rem;
+    font-size:
+        .95rem;
 
-    line-height: 1.6;
+    line-height:
+        1.6;
 
-    resize: vertical;
-
-    outline: none;
+    resize:
+        vertical;
 
     transition:
         border-color .2s ease,
@@ -1958,7 +2053,8 @@ button:focus-visible {
 
 
 .user-answer-input::placeholder {
-    color: var(--text-muted);
+    color:
+        var(--text-muted);
 }
 
 
@@ -1977,57 +2073,19 @@ button:focus-visible {
 
 
 /* =========================================================
-   23 — ANSWERS
+   25 — CORRECT ANSWER
 ========================================================= */
-
-.answers-btn {
-
-    width: 100%;
-
-    min-height: 44px;
-
-    margin-top: 18px;
-
-    border-radius: 12px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(139,110,232,.12),
-            rgba(245,139,181,.10)
-        );
-
-    color:
-        var(--primary);
-
-    font-size: 13px;
-
-    font-weight: 750;
-
-    transition:
-        background var(--transition),
-        transform var(--transition);
-}
-
-
-.answers-btn:hover {
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(139,110,232,.18),
-            rgba(245,139,181,.15)
-        );
-}
-
 
 .question-answer {
 
-    margin-top: 14px;
+    margin-top:
+        14px;
 
-    padding: 14px;
+    padding:
+        14px;
 
-    border-radius: 14px;
+    border-radius:
+        14px;
 
     background:
         linear-gradient(
@@ -2043,25 +2101,11 @@ button:focus-visible {
     color:
         var(--text);
 
-    line-height: 1.7;
+    line-height:
+        1.7;
 
     animation:
-        answerReveal
-        .25s
-        ease;
-}
-
-
-.question-answer strong {
-
-    display: block;
-
-    margin-bottom: 6px;
-
-    color:
-        #45ad7c;
-
-    font-size: .85rem;
+        answerReveal .25s ease;
 }
 
 
@@ -2070,16 +2114,20 @@ button:focus-visible {
     content:
         "✓ Answer";
 
-    display: block;
+    display:
+        block;
 
-    margin-bottom: 6px;
+    margin-bottom:
+        6px;
 
     color:
         #45ad7c;
 
-    font-size: .8rem;
+    font-size:
+        .8rem;
 
-    font-weight: 700;
+    font-weight:
+        700;
 }
 
 
@@ -2087,7 +2135,8 @@ button:focus-visible {
 
     from {
 
-        opacity: 0;
+        opacity:
+            0;
 
         transform:
             translateY(-5px);
@@ -2095,7 +2144,8 @@ button:focus-visible {
 
     to {
 
-        opacity: 1;
+        opacity:
+            1;
 
         transform:
             translateY(0);
@@ -2104,20 +2154,54 @@ button:focus-visible {
 
 
 /* =========================================================
-   24 — READER FOOTER
+   26 — NO QUESTIONS
+========================================================= */
+
+.no-questions {
+
+    margin:
+        10px 0;
+
+    padding:
+        18px;
+
+    border-radius:
+        var(--radius-md);
+
+    background:
+        var(--glass-light);
+
+    color:
+        var(--text-muted);
+
+    text-align:
+        center;
+
+    font-size:
+        13px;
+}
+
+
+/* =========================================================
+   27 — READER FOOTER
 ========================================================= */
 
 .reader-footer {
 
-    min-height: 64px;
+    min-height:
+        64px;
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: space-between;
+    justify-content:
+        space-between;
 
-    gap: 10px;
+    gap:
+        10px;
 
     padding:
         10px
@@ -2134,19 +2218,24 @@ button:focus-visible {
 
 .navigation-btn {
 
-    min-height: 40px;
+    min-height:
+        40px;
 
     padding:
         0
         13px;
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    gap: 7px;
+    gap:
+        7px;
 
-    border-radius: 10px;
+    border-radius:
+        10px;
 
     background:
         var(--glass-light);
@@ -2154,17 +2243,36 @@ button:focus-visible {
     color:
         var(--text-soft);
 
-    font-size: 12px;
+    font-size:
+        12px;
 
-    font-weight: 650;
+    font-weight:
+        650;
+
+    transition:
+        background var(--transition),
+        color var(--transition),
+        transform var(--transition);
+}
+
+
+.navigation-btn:hover:not(:disabled) {
+
+    background:
+        var(--primary-soft);
+
+    color:
+        var(--primary);
 }
 
 
 .navigation-btn:disabled {
 
-    opacity: .3;
+    opacity:
+        .3;
 
-    cursor: not-allowed;
+    cursor:
+        not-allowed;
 }
 
 
@@ -2173,35 +2281,46 @@ button:focus-visible {
     color:
         var(--text-muted);
 
-    font-size: 12px;
+    font-size:
+        12px;
 
-    font-weight: 650;
+    font-weight:
+        650;
 }
 
 
 /* =========================================================
-   25 — SIDE MENU
+   28 — SIDE MENU
 ========================================================= */
 
 .side-menu {
 
-    position: fixed;
+    position:
+        fixed;
 
-    top: 0;
-    left: 0;
+    top:
+        0;
 
-    z-index: 1000;
+    left:
+        0;
+
+    z-index:
+        1000;
 
     width:
         min(300px, 85vw);
 
-    height: 100vh;
+    height:
+        100vh;
 
-    display: flex;
+    display:
+        flex;
 
-    flex-direction: column;
+    flex-direction:
+        column;
 
-    padding: 18px;
+    padding:
+        18px;
 
     background:
         var(--bg-soft);
@@ -2224,19 +2343,28 @@ button:focus-visible {
 
 
 .side-menu.open {
-    transform: translateX(0);
+    transform:
+        translateX(0);
 }
 
 
+/* =========================================================
+   29 — SIDE MENU HEADER
+========================================================= */
+
 .side-menu-header {
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    gap: 10px;
+    gap:
+        10px;
 
-    padding-bottom: 22px;
+    padding-bottom:
+        22px;
 
     border-bottom:
         1px solid
@@ -2245,17 +2373,27 @@ button:focus-visible {
 
 
 .side-menu-header > div:nth-child(2) {
-    flex: 1;
+    flex:
+        1;
+
+    min-width:
+        0;
 }
 
 
 .side-menu-header h2 {
 
-    margin: 0;
+    margin:
+        0;
 
-    font-size: 17px;
+    color:
+        var(--text);
 
-    font-weight: 750;
+    font-size:
+        17px;
+
+    font-weight:
+        750;
 }
 
 
@@ -2264,55 +2402,70 @@ button:focus-visible {
     color:
         var(--text-muted);
 
-    font-size: 11px;
+    font-size:
+        11px;
 }
 
 
 /* =========================================================
-   26 — SIDE NAVIGATION
+   30 — SIDE NAVIGATION
 ========================================================= */
 
 .side-navigation {
 
-    display: flex;
+    display:
+        flex;
 
-    flex-direction: column;
+    flex-direction:
+        column;
 
-    gap: 6px;
+    gap:
+        6px;
 
-    padding-top: 22px;
+    padding-top:
+        22px;
 }
 
 
 .side-nav-item,
 .side-action-btn {
 
-    width: 100%;
+    width:
+        100%;
 
-    min-height: 46px;
+    min-height:
+        46px;
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    gap: 12px;
+    gap:
+        12px;
 
     padding:
         0
         13px;
 
-    border-radius: 12px;
+    border-radius:
+        12px;
 
-    background: transparent;
+    background:
+        transparent;
 
     color:
         var(--text-soft);
 
-    text-align: left;
+    text-align:
+        right;
 
-    font-size: 13px;
+    font-size:
+        13px;
 
-    font-weight: 600;
+    font-weight:
+        600;
 
     transition:
         background var(--transition),
@@ -2320,28 +2473,24 @@ button:focus-visible {
 }
 
 
-/* ---------- Menu Colors ---------- */
+/* ---------- Navigation Colors ---------- */
 
 .side-nav-item:nth-child(1) {
     --menu-color: #5faef7;
 }
 
+
 .side-nav-item:nth-child(2) {
     --menu-color: #67c99a;
 }
+
 
 .side-nav-item:nth-child(3) {
     --menu-color: #f4c65b;
 }
 
-.side-nav-item:nth-child(4) {
-    --menu-color: #ed86b3;
-}
 
-.side-nav-item:nth-child(5) {
-    --menu-color: #9a7be8;
-}
-
+/* ---------- Active ---------- */
 
 .side-nav-item.active {
 
@@ -2372,20 +2521,32 @@ button:focus-visible {
 
     background:
         var(--glass-light);
+
+    color:
+        var(--text);
 }
 
 
+/* =========================================================
+   31 — SIDE MENU ACTIONS
+========================================================= */
+
 .side-menu-actions {
 
-    display: flex;
+    display:
+        flex;
 
-    flex-direction: column;
+    flex-direction:
+        column;
 
-    gap: 6px;
+    gap:
+        6px;
 
-    margin-top: 24px;
+    margin-top:
+        24px;
 
-    padding-top: 18px;
+    padding-top:
+        18px;
 
     border-top:
         1px solid
@@ -2394,19 +2555,35 @@ button:focus-visible {
 
 
 .side-action-btn.danger {
-    color: var(--danger);
+    color:
+        var(--danger);
+}
+
+
+.side-action-btn.danger:hover {
+
+    background:
+        var(--red-soft);
+
+    color:
+        var(--danger);
 }
 
 
 /* =========================================================
-   27 — SIDE FOOTER
+   32 — SIDE MENU FOOTER
 ========================================================= */
 
 .side-menu-footer {
 
-    margin-top: auto;
+    margin-top:
+        auto;
 
-    padding-top: 18px;
+    margin-bottom:
+        30px;
+
+    padding-top:
+        18px;
 
     border-top:
         1px solid
@@ -2415,41 +2592,55 @@ button:focus-visible {
     color:
         var(--text-muted);
 
-    font-size: 11px;
+    font-size:
+        11px;
 
-    text-align: center;
-    margin-bottom:30px;
+    text-align:
+        center;
 }
 
 
 .side-menu-footer p {
-    margin: 0;
+    margin:
+        0;
 }
 
 
 .side-menu-footer p + p {
-    margin-top: 3px;
+    margin-top:
+        3px;
+}
+
+
+.copyright {
+    opacity:
+        .8;
 }
 
 
 /* =========================================================
-   28 — MENU OVERLAY
+   33 — MENU OVERLAY
 ========================================================= */
 
 .menu-overlay {
 
-    position: fixed;
+    position:
+        fixed;
 
-    inset: 0;
+    inset:
+        0;
 
-    z-index: 900;
+    z-index:
+        900;
 
     background:
         rgba(0,0,0,.55);
 
-    opacity: 0;
+    opacity:
+        0;
 
-    visibility: hidden;
+    visibility:
+        hidden;
 
     transition:
         opacity .2s ease,
@@ -2459,149 +2650,56 @@ button:focus-visible {
 
 .menu-overlay.open {
 
-    opacity: 1;
+    opacity:
+        1;
 
-    visibility: visible;
+    visibility:
+        visible;
 }
 
 
 /* =========================================================
-   29 — EMPTY STATE
-========================================================= */
-
-.empty-state {
-
-    padding:
-        50px
-        20px;
-
-    text-align: center;
-
-    color:
-        var(--text-muted);
-}
-
-
-.empty-icon {
-
-    margin-bottom: 12px;
-
-    font-size: 32px;
-
-    opacity: .6;
-}
-
-
-.empty-state h3 {
-
-    margin: 0;
-
-    color:
-        var(--text-soft);
-
-    font-size: 17px;
-}
-
-
-.empty-state p {
-
-    margin:
-        5px 0 0;
-
-    font-size: 13px;
-}
-
-
-/* =========================================================
-   30 — TOAST
-========================================================= */
-
-.toast {
-
-    position: fixed;
-
-    left: 50%;
-    bottom: 24px;
-
-    z-index: 2000;
-
-    padding:
-        10px
-        16px;
-
-    border-radius: 12px;
-
-    background:var(--bg)
-        ;
-
-    border:
-        1px solid
-        var(--glass-border);
-
-    color:
-        var(--text);
-
-    font-size: 13px;
-
-    font-weight: 600;
-
-    box-shadow:
-        var(--shadow);
-
-    transform:
-        translate(-50%,20px);
-
-    opacity: 0;
-
-    pointer-events: none;
-
-    transition:
-        opacity .2s ease,
-        transform .2s ease;
-}
-
-
-.toast.show {
-
-    opacity: 1;
-
-    transform:
-        translate(-50%,0);
-}
-
-
-/* =========================================================
-   31 — RESET PROGRESS MODAL
+   34 — RESET MODAL
 ========================================================= */
 
 .confirm-modal {
 
-    position: fixed;
+    position:
+        fixed;
 
-    inset: 0;
+    inset:
+        0;
 
-    z-index: 3000;
+    z-index:
+        3000;
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: center;
+    justify-content:
+        center;
 
-    padding: 20px;
+    padding:
+        20px;
 }
 
 
 .confirm-modal.hidden {
-    display: none !important;
+    display:
+        none !important;
 }
 
 
 .confirm-overlay {
 
-    position: absolute;
+    position:
+        absolute;
 
-    inset: 0;
+    inset:
+        0;
 
     background:
         rgba(0,0,0,.55);
@@ -2616,21 +2714,25 @@ button:focus-visible {
 
 .confirm-box {
 
-    position: relative;
+    position:
+        relative;
 
-    z-index: 1;
+    z-index:
+        1;
 
     width:
-        min(100%,380px);
+        min(100%, 380px);
 
     padding:
         28px
         22px
         22px;
 
-    text-align: center;
+    text-align:
+        center;
 
-    border-radius: 24px;
+    border-radius:
+        24px;
 
     background:
         var(--bg-soft);
@@ -2644,26 +2746,32 @@ button:focus-visible {
         rgba(0,0,0,.25);
 
     animation:
-        confirmModalIn
-        .2s
-        ease-out;
+        confirmModalIn .2s ease-out;
 }
 
 
 .confirm-icon {
 
-    width: 62px;
-    height: 62px;
+    width:
+        62px;
+
+    height:
+        62px;
 
     margin:
         0 auto 16px;
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
-    justify-content: center;
+    align-items:
+        center;
 
-    border-radius: 20px;
+    justify-content:
+        center;
+
+    border-radius:
+        20px;
 
     background:
         linear-gradient(
@@ -2676,22 +2784,27 @@ button:focus-visible {
         1px solid
         rgba(245,139,181,.25);
 
-    font-size: 27px;
+    font-size:
+        27px;
 }
 
 
 .confirm-box h3 {
 
-    margin: 0;
+    margin:
+        0;
 
     color:
         var(--text);
 
-    font-size: 20px;
+    font-size:
+        20px;
 
-    font-weight: 800;
+    font-weight:
+        800;
 
-    letter-spacing: -.3px;
+    letter-spacing:
+        -.3px;
 }
 
 
@@ -2703,36 +2816,44 @@ button:focus-visible {
     color:
         var(--text-muted);
 
-    font-size: 13px;
+    font-size:
+        13px;
 
-    line-height: 1.7;
+    line-height:
+        1.7;
 }
 
 
 .confirm-actions {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         1fr 1fr;
 
-    gap: 10px;
+    gap:
+        10px;
 }
 
 
 .confirm-btn {
 
-    min-height: 46px;
+    min-height:
+        46px;
 
     padding:
         0
         14px;
 
-    border-radius: 12px;
+    border-radius:
+        12px;
 
-    font-size: 13px;
+    font-size:
+        13px;
 
-    font-weight: 750;
+    font-weight:
+        750;
 
     transition:
         transform var(--transition),
@@ -2781,7 +2902,8 @@ button:focus-visible {
 
 
 .confirm-btn.danger:hover {
-    opacity: .9;
+    opacity:
+        .9;
 }
 
 
@@ -2789,7 +2911,8 @@ button:focus-visible {
 
     from {
 
-        opacity: 0;
+        opacity:
+            0;
 
         transform:
             translateY(12px)
@@ -2798,7 +2921,8 @@ button:focus-visible {
 
     to {
 
-        opacity: 1;
+        opacity:
+            1;
 
         transform:
             translateY(0)
@@ -2808,18 +2932,105 @@ button:focus-visible {
 
 
 /* =========================================================
-   32 — SCROLLBAR
+   35 — TOAST
+========================================================= */
+
+.toast {
+
+    position:
+        fixed;
+
+    left:
+        50%;
+
+    bottom:
+        24px;
+
+    z-index:
+        2000;
+
+    max-width:
+        calc(100% - 32px);
+
+    padding:
+        10px
+        16px;
+
+    border-radius:
+        12px;
+
+    background:
+        var(--bg-soft);
+
+    border:
+        1px solid
+        var(--glass-border);
+
+    color:
+        var(--text);
+
+    font-size:
+        13px;
+
+    font-weight:
+        600;
+
+    box-shadow:
+        var(--shadow);
+
+    transform:
+        translate(-50%, 20px);
+
+    opacity:
+        0;
+
+    pointer-events:
+        none;
+
+    transition:
+        opacity .2s ease,
+        transform .2s ease;
+}
+
+
+.toast.show {
+
+    opacity:
+        1;
+
+    transform:
+        translate(-50%, 0);
+}
+
+
+/* =========================================================
+   36 — ANSWERS CONTAINER
+========================================================= */
+
+.answers-container {
+
+    margin-top:
+        16px;
+}
+
+
+/* =========================================================
+   37 — SCROLLBAR
 ========================================================= */
 
 ::-webkit-scrollbar {
 
-    width: 5px;
-    height: 5px;
+    width:
+        5px;
+
+    height:
+        5px;
 }
 
 
 ::-webkit-scrollbar-track {
-    background: transparent;
+    background:
+        transparent;
 }
 
 
@@ -2833,39 +3044,54 @@ button:focus-visible {
             #65b5ed
         );
 
-    border-radius: 20px;
-    opacity: ;
+    border-radius:
+        20px;
+}
+
+
+/* Firefox */
+
+* {
+    scrollbar-width:
+        thin;
+
+    scrollbar-color:
+        #9a7be8
+        transparent;
 }
 
 
 /* =========================================================
-   33 — HIDDEN
+   38 — HIDDEN
 ========================================================= */
 
 .hidden {
-    display: none !important;
+    display:
+        none !important;
 }
 
 
 /* =========================================================
-   34 — MOBILE
+   39 — MOBILE
 ========================================================= */
 
 @media (max-width: 600px) {
+
+    /* ---------- Main ---------- */
 
     .main-content {
 
         width:
             calc(100% - 24px);
 
-        padding-top: 22px;
+        padding:
+            22px
+            0
+            50px;
     }
 
 
-    .brand-text span {
-        display: none;
-    }
-
+    /* ---------- Header ---------- */
 
     .app-header {
 
@@ -2875,50 +3101,92 @@ button:focus-visible {
     }
 
 
+    .brand-text span {
+        display:
+            none;
+    }
+
+
+    /* ---------- Chapters ---------- */
+
     .level-selector {
 
         grid-template-columns:
-            repeat(2,1fr);
+            repeat(2, 1fr);
 
-        gap: 9px;
+        gap:
+            9px;
     }
 
 
     .level-btn {
 
-        min-height: 72px;
+        min-height:
+            72px;
     }
 
 
     .level-btn.active {
-        transform: translateY(-1px);
+
+        transform:
+            translateY(-1px);
     }
 
+
+    /* ---------- Sections ---------- */
 
     .section-header h2 {
-        font-size: 19px;
+        font-size:
+            19px;
     }
 
 
+    /* ---------- Lessons ---------- */
+
     .lesson-card {
-        padding: 14px;
+
+        padding:
+            14px;
     }
 
 
     .lesson-number {
 
-        width: 40px;
-        height: 40px;
+        width:
+            40px;
+
+        height:
+            40px;
     }
 
 
+    .lesson-info h3 {
+        font-size:
+            14px;
+    }
+
+
+    .lesson-info p {
+        font-size:
+            11px;
+    }
+
+
+    /* ---------- Reader ---------- */
+
     .reader-container {
 
-        width: 100%;
-        height: 100%;
+        width:
+            100%;
 
-        border: 0;
-        border-radius: 0;
+        height:
+            100%;
+
+        border:
+            0;
+
+        border-radius:
+            0;
     }
 
 
@@ -2932,62 +3200,53 @@ button:focus-visible {
 
 
     .reader-title-section h2 {
-      font-size: 23px;
-      color: var(--title-color);
-      transition: color .3s ease;
+
+        font-size:
+            23px;
     }
-    /* ألوان عناوين الدروس */
-    
-    .reader-title-section h2.title-color-1 {
-      color: #2f9fc4;
-    }
-    
-    .reader-title-section h2.title-color-2 {
-      color: #d86696;
-    }
-    
-    .reader-title-section h2.title-color-3 {
-      color: #8b6ed8;
-    }
-    
-    .reader-title-section h2.title-color-4 {
-      color: #e59a5a;
-    }
-    
-    .reader-title-section h2.title-color-5 {
-      color: #4fae8a;
-    }
-    
-    .reader-title-section h2.title-color-6 {
-      color: #d05f72;
+
+
+    .reader-title-section p {
+
+        font-size:
+            16px;
     }
 
 
     .text-card {
 
-        padding: 17px;
+        padding:
+            17px;
 
-        border-radius: 17px;
+        border-radius:
+            17px;
     }
 
 
     .reader-text {
 
-        font-size: 15px;
+        font-size:
+            15px;
 
-        line-height: 1.9;
+        line-height:
+            1.9;
     }
 
 
     .reader-translation {
 
-        font-size: 14px;
+        font-size:
+            14px;
 
-        line-height: 1.9;
+        line-height:
+            1.9;
     }
 
 
+    /* ---------- Reader Footer ---------- */
+
     .navigation-btn {
+
         padding:
             0
             10px;
@@ -2995,9 +3254,35 @@ button:focus-visible {
 
 
     .navigation-btn span:last-child {
-        display: none;
+        display:
+            none;
     }
 
+
+    /* ---------- Questions ---------- */
+
+    .question-card {
+
+        padding:
+            16px;
+    }
+
+
+    .question-text {
+
+        font-size:
+            .95rem;
+    }
+
+
+    .user-answer-input {
+
+        font-size:
+            .9rem;
+    }
+
+
+    /* ---------- Reset ---------- */
 
     .confirm-box {
 
@@ -3006,47 +3291,77 @@ button:focus-visible {
             18px
             18px;
 
-        border-radius: 22px;
+        border-radius:
+            22px;
     }
 
 
     .confirm-box h3 {
-        font-size: 19px;
+        font-size:
+            19px;
     }
 
 
     .confirm-box p {
-        font-size: 12px;
+        font-size:
+            12px;
     }
 }
 
 
 /* =========================================================
-   35 — VERY SMALL DEVICES
+   40 — VERY SMALL DEVICES
 ========================================================= */
 
 @media (max-width: 360px) {
 
     .header-actions {
-        gap: 4px;
+
+        gap:
+            4px;
     }
 
 
     .icon-btn {
 
-        width: 38px;
-        height: 38px;
+        width:
+            38px;
+
+        height:
+            38px;
     }
 
 
     .app-logo {
 
-        width: 36px;
-        height: 36px;
+        width:
+            36px;
+
+        height:
+            36px;
     }
 
 
     .level-btn span {
-        font-size: 10px;
+
+        font-size:
+            10px;
+    }
+
+
+    .lesson-card {
+
+        gap:
+            10px;
+    }
+
+
+    .lesson-number {
+
+        width:
+            38px;
+
+        height:
+            38px;
     }
 }
